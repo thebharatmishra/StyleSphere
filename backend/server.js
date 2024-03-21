@@ -8,4 +8,8 @@ app.get("/", (req, res) => {
   res.send("Server is Ready!");
   console.log(req);
 });
-app.listen(PORT, () => console.log(`Listening at ${PORT}`));
+app.listen(PORT, () =>
+  console.log(
+    `Listening at ${PORT}, Click here to redirect http://localhost:${PORT}/`
+  )
+);
