@@ -1,31 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 
-const Home = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axios.get("/api/products");
-      setProducts(data);
-    };
-    fetchProducts();
-  }, []);
-
+function Home() {
   return (
-    <div>
-      <h1>Products</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product._id}>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>${product.price}</p>
-          </li>
-        ))}
-      </ul>
+    <div className="container">
+      <h1>Welcome to Our E-commerce Store</h1>
+      <div className="products">{/* Products will be mapped here later */}</div>
     </div>
   );
-};
+}
 
 export default Home;
